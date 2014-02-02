@@ -31,9 +31,10 @@
      }   
      $( ".box" ).click( function() {
        console.log("you've just clicked box with id:"+$(this).attr('id'));
+
        if($( "#img"+$(this).attr('id') ).css("display")=="none" && boxFlipped<2){
 	 flippedImage[boxFlipped] = $( "#img"+$(this).attr('id') );
-	 $( "#img"+$(this).attr('id') ).show();
+	 flippedImage[boxFlipped].show();
 	 
          boxFlipped++;
 	 if ( flippedImage[0].attr('src')==flippedImage[1].attr('src') && flippedImage[0].attr('id')!=flippedImage[1].attr('id') ) {
@@ -47,6 +48,8 @@
          } else {
 	     flippedImage[0].hide();
 	     flippedImage[1].hide();
+	     flippedImage[0]=null;
+	     flippedImage[1]=null;
 	     boxFlipped = 0;
 	 }
        })
