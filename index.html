@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Adventure time turning cards</title>
+<script src="scripts/jquery.js"></script>
+<script>
+ var boxFlipped=0;
+ var flippedImage=new Array(2);
+ var imagePath=new Array(18);
+    for(i=0; i<36; i++){
+      if (i < 18) imagePath[i]="images\/"+(i+1)+".png";
+      else imagePath[i]="images\/"+(i-17)+".png";
+    }
+
+  $( document ).ready( function() {
+
+   
+    confuseArray(imagePath);
+   
+        for(i=0; i<36;i++){
+                    $(".wrapper").append("<div id="+i+" class='box'><img id='img"+i+"' class='img' src="+imagePath[i]+">")    
+                }   
+	$( ".box" ).click( function() {
+          console.log("you've just clicked button with id:"+$(this).attr('id'));
+          if($( "#img"+$(this).attr('id') ).css("visibility")=="hidden" && boxFlipped<2){
+	    flippedImage[boxFlipped] = $( "#img"+$(this).attr('id') );
+	    $( "#img"+$(this).attr('id') ).css("visibility","visible");
+	    
+            boxFlipped++;
+	    if ( flippedImage[0].attr('src')==flippedImage[1].attr('src') ) boxFlipped =0;
+          } else {
+	      flippedImage[0].css("visibility","hidden");
+	      flippedImage[1].css("visibility","hidden");
+	      boxFlipped = 0;
+	    }
+        })
+  })
+
+
+      function confuseArray(array){
+      var a,b,r1,r2;
+      for(i=0; i<array.length; i++){
+        r1=Math.floor(Math.random()*array.length);
+        r2=Math.floor(Math.random()*array.length);
+        a = array[r1];
+        b = array[r2];
+        array[r1] = b;
+        array[r2] = a;
+      }
+      return array;
+    }
+  
+</script>
+<style>
+.wrapper { width:920px; margin:0 auto; }
+.box { width:150px; height:150px; float:left; margin:1px; color: #333; background:#333;}
+.img {
+visibility: hidden;
+width: 150px;
+height: 150px;
+}
+.col1 { background:yellow; }
+.col2 { background:red; }
+</style>
+</head>
+<body>
+<div class="wrapper"> </div>
+</body>
+</html>
