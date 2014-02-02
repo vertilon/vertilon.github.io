@@ -36,7 +36,7 @@
 	 $( "#img"+$(this).attr('id') ).show();
 	 
          boxFlipped++;
-	 if ( flippedImage[0].attr('src')==flippedImage[1].attr('src') ) {
+	 if ( flippedImage[0].attr('src')==flippedImage[1].attr('src') && flippedImage[0].attr('id')!=flippedImage[1].attr('id') ) {
 	     pairs++;
 	     boxFlipped =0;
 	     if (pairs == 18) {
