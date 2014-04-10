@@ -1,0 +1,69 @@
+body{
+	background-color: #333;
+} 
+.table 
+{  
+	position: fixed;
+	width: 80vw; 
+	height: 35vw;
+	color: #999; 
+	background:#1ba213;
+	border:thin solid #a25713;
+	border-radius:20vw;
+	margin: 10vw 10vw;
+}
+.hud
+{
+	position: fixed;
+	font-size: x-large;
+	text-align:center;  
+	width:100vw; 
+	/*margin: 0 auto; */
+	height:20vw; 
+	border: solid 1px red;
+	left: 0;
+	bottom: 0;
+}
+.player_img
+{
+	display: none;
+	position: absolute;
+	float: left;
+	width: 7vw;
+	height: 7vw;
+	background: #fff;
+	border: thin solid #999;
+	border-radius: 99vw;
+}
+.player_box
+{
+	position: absolute;
+	width: 12vw;
+	height: 3vw;
+	background: #ccc;
+	border: thick solid #999;
+	border-radius: 10px;
+	bottom: -3vw;
+	left: -2vw;
+	font-size: 2vw;
+	text-align: center;
+	color: black;
+}
+.card 
+{ 
+	position: absolute;
+	background: yellow; 
+	width: 3vw;
+	height: 5.25vw;
+	border: medium solid #fff;
+	border-radius: 0.5vw;
+	/*left: 300px;*/
+	/*top: 200px;*/
+	/*transform: rotate(-45deg);*/
+}
+.img {
+
+width: 8vw;
+height: 8vw;
+border-radius: 99vw;
+}
